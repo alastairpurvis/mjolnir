@@ -5,7 +5,7 @@
   "main": "mjolnir.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mjolnir/mjolnir.git"
+    "url": "git://github.com/alastairpurvis/mjolnir-ajax-library.git"
   },
   "author": "Alastair Purvis",
   "license": "MIT",
