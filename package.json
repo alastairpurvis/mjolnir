@@ -1,0 +1,13 @@
+{
+  "name": "@alastairpurvis/mjolnir",
+  "version": "0.0.7",
+  "description": "Lightweight AJAX library",
+  "main": "mjolnir.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mjolnir/mjolnir.git"
+  },
+  "author": "Alastair Purvis",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
