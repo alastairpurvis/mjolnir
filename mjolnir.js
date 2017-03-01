@@ -1,19 +1,15 @@
 function mjolnirAjax(config) {
 
     if (!config.url) {
-
         if (config.debugLog == true)
             console.log("No Url!");
         return;
-
     }
 
     if (!config.type) {
-
         if (config.debugLog == true)
             console.log("No Default type (GET/POST) given!");
         return;
-
     }
 
     if (!config.method) {
@@ -30,7 +26,6 @@ function mjolnirAjax(config) {
     xmlhttp.onreadystatechange = function() {
 
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-
             if (config.success) {
                 config.success(xmlhttp.responseText, xmlhttp.readyState);
             }
@@ -41,7 +36,6 @@ function mjolnirAjax(config) {
                 console.log("Response Data:" + xmlhttp.responseText);
 
         } else {
-
             if (config.debugLog == true)
                 console.log("FailureResponse --> State:" + xmlhttp.readyState + "Status:" + xmlhttp.status);
         }
@@ -55,7 +49,8 @@ function mjolnirAjax(config) {
             var datum = tmpArr[i].split('=');
             sendString.push(encodeURIComponent(datum[0]) + "=" + encodeURIComponent(datum[1]));
         }
-    }else if( typeof sendData === 'object' && !( sendData instanceof String || (FormData && sendData instanceof FormData) ) ){
+    }
+    else if( typeof sendData === 'object' && !( sendData instanceof String || (FormData && sendData instanceof FormData) ) ){
         for (var k in sendData) {
             var datum = sendData[k];
             if( Object.prototype.toString.call(datum) == "[object Array]" ){
