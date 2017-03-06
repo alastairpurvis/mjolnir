@@ -1,5 +1,4 @@
 function mjolnirAjax(config) {
-
     if (!config.url) {
         if (config.debugLog == true)
             console.log("No Url!");
@@ -21,9 +20,9 @@ function mjolnirAjax(config) {
         config.debugLog = false;
     }
 
-    var xmlhttp = initMjolnir();
+    const xmlhttp = initMjolnir();
 
-    xmlhttp.onreadystatechange = function() {
+    xmlhttp.onreadystatechange = () => {
 
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             if (config.success) {
@@ -33,43 +32,43 @@ function mjolnirAjax(config) {
             if (config.debugLog == true)
                 console.log("SuccessResponse");
             if (config.debugLog == true)
-                console.log("Response Data:" + xmlhttp.responseText);
+                console.log(`Response Data:${xmlhttp.responseText}`);
 
         } else {
             if (config.debugLog == true)
-                console.log("FailureResponse --> State:" + xmlhttp.readyState + "Status:" + xmlhttp.status);
+                console.log(`FailureResponse --> State:${xmlhttp.readyState}Status:${xmlhttp.status}`);
         }
     }
 
-    var sendString = [],
-        sendData = config.data;
+    let sendString = [];
+    const sendData = config.data;
     if( typeof sendData === "string" ){
-        var tmpArr = String.prototype.split.call(sendData,'&');
+        const tmpArr = String.prototype.split.call(sendData,'&');
         for(var i = 0, j = tmpArr.length; i < j; i++){
             var datum = tmpArr[i].split('=');
-            sendString.push(encodeURIComponent(datum[0]) + "=" + encodeURIComponent(datum[1]));
+            sendString.push(`${encodeURIComponent(datum[0])}=${encodeURIComponent(datum[1])}`);
         }
     }
     else if( typeof sendData === 'object' && !( sendData instanceof String || (FormData && sendData instanceof FormData) ) ){
-        for (var k in sendData) {
+        for (const k in sendData) {
             var datum = sendData[k];
             if( Object.prototype.toString.call(datum) == "[object Array]" ){
                 for(var i = 0, j = datum.length; i < j; i++) {
-                        sendString.push(encodeURIComponent(k) + "[]=" + encodeURIComponent(datum[i]));
+                        sendString.push(`${encodeURIComponent(k)}[]=${encodeURIComponent(datum[i])}`);
                 }
             }else{
-                sendString.push(encodeURIComponent(k) + "=" + encodeURIComponent(datum));
+                sendString.push(`${encodeURIComponent(k)}=${encodeURIComponent(datum)}`);
             }
         }
     }
     sendString = sendString.join('&');
 
     if (config.type == "GET") {
-        xmlhttp.open("GET", config.url + "?" + sendString, config.method);
+        xmlhttp.open("GET", `${config.url}?${sendString}`, config.method);
         xmlhttp.send();
 
         if (config.debugLog == true)
-            console.log("GET fired at:" + config.url + "?" + sendString);
+            console.log(`GET fired at:${config.url}?${sendString}`);
     }
     if (config.type == "POST") {
         xmlhttp.open("POST", config.url, config.method);
@@ -77,17 +76,13 @@ function mjolnirAjax(config) {
         xmlhttp.send(sendString);
 
         if (config.debugLog == true)
-            console.log("POST fired at:" + config.url + " || Data:" + sendString);
+            console.log(`POST fired at:${config.url} || Data:${sendString}`);
     }
-
-
-
-
 }
 
 function initMjolnir() {
 
-    var xmlhttp;
+    let xmlhttp;
     if (window.XMLHttpRequest) {
         // for IE7,firefox chrome and above
         xmlhttp = new XMLHttpRequest();
