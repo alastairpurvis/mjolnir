@@ -3,13 +3,13 @@
 Super lightweight alternative to jQuery's AJAX function for GET and POST requests. Minifed file comes out to 1.48 KB.
 
 #Usage
-Include the script
+####Include the .min script
 ```html
-<script type="text/javascript" src="https://cdn.rawgit.com/flouthoc/minAjax.js/master/minify/index.min.js"></script>
+<script type="text/javascript" src="mjolnir.min.js"></script>
 ```
 
 
-####Calling mjolnir
+####Call mjolnir
 ```js
   mjolnirAjax({
   url:"mypage",
