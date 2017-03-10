@@ -1,6 +1,6 @@
 ## React AJAX Library
 
-Super lightweight AJAX component for GET and POST requests with zero dependencies. Minified file comes out to just 1.48 KB. Can be used as a React component or just as a plain JavaScript function.
+Mjolnir is a lightweight, dependency free AJAX component for GET and POST requests. Minified file comes out to just 1.48 KB. Can be used as a React component or just as a plain JavaScript function.
 
 #Usage
 ####React
