@@ -99,4 +99,4 @@ const mjolnir = function (config) {
 
 
 
-export default mjolnirAjax;
+export default mjolnir;
