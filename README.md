@@ -16,19 +16,18 @@ import { mjolnir } from "path/mjolnir.js"
 ####Call mjolnir
 ```js
   mjolnir ({
-  url:"mypage",
-  type:"GET", // GET or POST
-  data:{
-    name: "Thor",
-    weapon: "Hammer",
-    nationality: "Asgard"
-  },
-  // Callback Function
-  // Data = response from the request
-  success: function(data){
-    // function to be executed on successful response
-  }
-
+      url:"mypage",
+      type:"GET", // GET or POST
+      data:{
+        name: "Thor",
+        weapon: "Hammer",
+        nationality: "Asgard"
+      },
+      // Callback Function
+      // Data = response from the request
+      success: function(data){
+        // function to be executed on successful response
+    }
 });
 
 
