@@ -1,4 +1,21 @@
-function mjolnirAjax(config) {
+import React from 'react';
+
+const mjolnir = function (config) {
+
+    function initMjolnir() {
+
+        let xmlhttp;
+        if (window.XMLHttpRequest) {
+            // for IE7,firefox chrome and above
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // for Internet Explorer
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        return xmlhttp;
+    }
+
     if (!config.url) {
         if (config.debugLog == true)
             console.log("No Url!");
@@ -80,16 +97,6 @@ function mjolnirAjax(config) {
     }
 }
 
-function initMjolnir() {
 
-    let xmlhttp;
-    if (window.XMLHttpRequest) {
-        // for IE7,firefox chrome and above
-        xmlhttp = new XMLHttpRequest();
-    } else {
-        // for Internet Explorer
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
 
-    return xmlhttp;
-}
+export default mjolnirAjax;

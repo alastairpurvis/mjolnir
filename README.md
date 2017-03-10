@@ -1,9 +1,13 @@
-## Mjolnir AJAX Library
+## React AJAX Library
 
-Super lightweight alternative to jQuery's AJAX function for GET and POST requests. Minifed file comes out to 1.48 KB.
+Super lightweight AJAX component for GET and POST requests with zero dependencies. Minified file comes out to just 1.48 KB. Can be used as a React component or just as a plain JavaScript function.
 
 #Usage
-####Include the .min script
+####React
+```js
+import { mjolnir } from "path/mjolnir.js"
+```
+####Vanilla JS
 ```html
 <script type="text/javascript" src="mjolnir.min.js"></script>
 ```
