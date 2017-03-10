@@ -27,7 +27,7 @@ import { mjolnir } from "path/mjolnir.js"
       // Data = response from the request
       success: function(data){
         // function to be executed on successful response
-    }
+      }
 });
 
 
