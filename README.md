@@ -15,7 +15,7 @@ import { mjolnir } from "path/mjolnir.js"
 
 ####Call mjolnir
 ```js
-  mjolnirAjax({
+  mjolnir ({
   url:"mypage",
   type:"GET", // GET or POST
   data:{
